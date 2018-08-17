@@ -7,7 +7,7 @@ class Header extends Component {
     return false;
   }
   render() {
-    console.log("Rendering: Header");
+    //console.log("Rendering: Header");
 
     return(
       <div>
@@ -22,7 +22,7 @@ class SubHeading extends Component {
     return false;
   }
   render() {
-    console.log("Rendering: SubHeading");
+    //console.log("Rendering: SubHeading");
 
     var subHeadingStyle = {
       gridArea: 'subHeading',
@@ -48,8 +48,7 @@ class Video extends Component {
     return false;
   }
 render() {
-  console.log("Rendering: Video");
-
+  //console.log("Rendering: Video");
   var videoStyle = {
     gridArea: 'video',
     positon: 'relative'
@@ -80,7 +79,7 @@ class Wrapper extends Component {
     return false;
   }
   render() {
-    console.log("Rendering: Wrapper");
+    //console.log("Rendering: Wrapper");
     var pageWrapperStyle = {
       fontFamily: 'Open Sans',
       boxSizing: 'borderBox',

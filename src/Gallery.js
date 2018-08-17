@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+//import PropTypes from 'prop-types';
 import Image from './Image.js';
 import Wrapper from './lowerLayout';
 import './style.css';
 
-class Gallery extends React.Component {
+class Gallery extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -17,7 +17,7 @@ class Gallery extends React.Component {
   }
 
   selectImage(url, e, alt) {
-    console.log("selectImage() 'click'");
+    //console.log("selectImage() 'click'");
     let altTag = alt+1;
     this.setState({
       url:url,
@@ -53,7 +53,7 @@ class Gallery extends React.Component {
   }
 
   render() {
-    console.log("Rendering: Gallery");
+    //console.log("Rendering: Gallery");
 
     var columnStyle = {
       float: this.props.float,
@@ -114,8 +114,9 @@ class Gallery extends React.Component {
 }//close render()
 
 } //****************************************************close Gallery Component
-
+/*
 Gallery.propTypes = {
   imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired
 }
+*/
 export default Gallery

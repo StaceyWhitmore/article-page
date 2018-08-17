@@ -6,7 +6,7 @@ import './style.css';
 class Image extends React.Component {
 
   render() {
-    console.log("Rendering: Image");
+    //console.log("Rendering: Image");
     var containerStyle = {
       //display: 'block'
     }

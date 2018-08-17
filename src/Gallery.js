@@ -8,21 +8,42 @@ class Gallery extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      hover: false,
       url: require('./images/photo01.jpg'),
       alt: '1'
     }
     this.selectImage = this.selectImage.bind(this);
+    //this.toggleHover = this.toggleHover.bind(this);
   }
 
   selectImage(url, e, alt) {
+    console.log("selectImage() 'click'");
     let altTag = alt+1;
     this.setState({
       url:url,
       alt:altTag
     })
   }
+  /*
+  toggleHover() {
+    this.setState({
+      hover: !this.state.hover
+    })
+  }
+
+  handleMouseEnter(e) {
+    this.toggleHover();
+
+    e.stopPropagation();
+  }
+  */
 
   renderThumbNail(imageUrl, index) {
+    //var getInitialState = () => {hover:false}
+
+    //var toggleHover = () => this.setState({hover: !this.state.hover})/*no return needed*/
+    //removed from <img />   onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}
+
     return (
       <div id={index} float="right" width="10%" padding="5px" className='column' key={imageUrl.toString()}>
         <img width="100%" src={imageUrl} alt={'Photo No.' + (index + 1)} onClick={(e) => this.selectImage(imageUrl, e, index)}/>
@@ -32,11 +53,14 @@ class Gallery extends React.Component {
   }
 
   render() {
+    console.log("Rendering: Gallery");
+
     var columnStyle = {
       float: this.props.float,
       width: this.props.width,
       padding: this.props.padding
     }
+
     var rowStyle = {
       marginLeft: '50px',
       marginRight: '50px'
@@ -58,6 +82,14 @@ class Gallery extends React.Component {
     var textColStyle = {
       float: 'left'
     }
+    /*
+    var hoverStyle;
+    if (this.state.hover) {
+      hoverStyle = {cursor: 'pointer', opacity: 1}
+    } else {
+      hoverStyle = {columnStyle}
+    }
+    */
 
       return(
   <div>

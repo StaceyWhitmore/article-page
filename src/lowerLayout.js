@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+//import React, { PureComponent } from 'react';
 import './style.css';
 
-class Header extends React.Component {
+class Header extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
   render() {
+    console.log("Rendering: Header");
+
     return(
       <div>
         <div className="box header"></div>
@@ -11,8 +17,13 @@ class Header extends React.Component {
   }
 }//close <Header />
 
-class SubHeading extends React.Component {
+class SubHeading extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
   render() {
+    console.log("Rendering: SubHeading");
+
     var subHeadingStyle = {
       gridArea: 'subHeading',
       position: 'relative'
@@ -32,8 +43,13 @@ class SubHeading extends React.Component {
   }
 }
 
-class Video extends React.Component {
+class Video extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
 render() {
+  console.log("Rendering: Video");
+
   var videoStyle = {
     gridArea: 'video',
     positon: 'relative'
@@ -59,9 +75,12 @@ render() {
 }//close <Video />
 
 
-class Wrapper extends React.Component {
-
+class Wrapper extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
   render() {
+    console.log("Rendering: Wrapper");
     var pageWrapperStyle = {
       fontFamily: 'Open Sans',
       boxSizing: 'borderBox',

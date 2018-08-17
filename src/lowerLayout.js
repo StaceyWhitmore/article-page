@@ -62,6 +62,12 @@ render() {
 class Wrapper extends React.Component {
 
   render() {
+    var pageWrapperStyle = {
+      fontFamily: 'Open Sans',
+      boxSizing: 'borderBox',
+      margin: '100px'
+
+    }
       var wrapperStyle = {
 
           display: 'grid',
@@ -82,7 +88,7 @@ class Wrapper extends React.Component {
 
 
     return(
-    <div>
+    <div style={pageWrapperStyle}>
       <Header />
       <div className="wrapper" style={wrapperStyle}>
           <div className="box indent-top"></div>

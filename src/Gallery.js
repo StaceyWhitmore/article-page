@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from './Image.js';
+import Wrapper from './lowerLayout';
 import './style.css';
 
 class Gallery extends React.Component {
@@ -59,6 +60,7 @@ class Gallery extends React.Component {
     }
 
       return(
+  <div>
     <div className="galleryContainer">
       <Image src={this.state.url} alt={this.state.alt}>
             <div className='row' style={rowStyle}>
@@ -74,6 +76,8 @@ class Gallery extends React.Component {
               <div style={{content: "", display:'table', clear: 'both'}}></div>
       </Image>
     </div>
+    <Wrapper />
+  </div>
   )//close return()
 }//close render()
 

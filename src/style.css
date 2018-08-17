@@ -122,11 +122,13 @@ div .indent-top {
   position: relative;
 }
 
+/*var subHeadingStyle*/
 .sub-heading {
   grid-area: sub-heading;
   position: relative;
 }
 
+/*var videoStyle*/
 .video {
   grid-area: video;
   positon: relative;
@@ -153,6 +155,7 @@ div .indent-bottom {
   grid-area: footer;
 }
 
+/*var wrapperStyle*/
 .wrapper {
   display: grid;
   grid-gap: 10px;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 //import PropTypes from 'prop-types';
 import Image from './Image.js';
+//import ThumbNail from './ThumbNail';
 import Wrapper from './lowerLayout';
-import './style.css';
+import './css/style.css';
 
 class Gallery extends Component {
   constructor(props, context) {
@@ -24,6 +25,8 @@ class Gallery extends Component {
       alt:altTag
     })
   }
+
+
   /*
   toggleHover() {
     this.setState({
@@ -40,20 +43,24 @@ class Gallery extends Component {
 
   renderThumbNail(imageUrl, index) {
     //var getInitialState = () => {hover:false}
-
-    //var toggleHover = () => this.setState({hover: !this.state.hover})/*no return needed*/
+    //var toggleHover = () => this.setState({hover: !this.state.hover})//no return needed
     //removed from <img />   onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}
-
     return (
-      <div id={index} float="right" width="10%" padding="5px" className='column' key={imageUrl.toString()}>
+      <div id={index} float="right" width="10%" padding="0px" className='column' key={imageUrl.toString()}>
         <img width="100%" src={imageUrl} alt={'Photo No.' + (index + 1)} onClick={(e) => this.selectImage(imageUrl, e, index)}/>
         <span value={imageUrl} onClick={(e) => this.selectImage(imageUrl, e, index)}></span>
       </div>
     )
   }
 
+
   render() {
     //console.log("Rendering: Gallery");
+    var pageWrapperStyle = {
+      fontFamily: " 'Open Sans', sans-serif, courier ",
+      boxSizing: 'borderBox',
+      margin: '100px'
+    }
 
     var columnStyle = {
       float: this.props.float,
@@ -62,12 +69,15 @@ class Gallery extends Component {
     }
 
     var rowStyle = {
-      marginLeft: '50px',
-      marginRight: '50px'
+      /*
+      marginLeft: '0px',
+      marginRight: '0px',
+      */
+    //  marginBottom: '0px'
     }
     var imgCaptionStyle = {
-      color: 'gray',
-      fontSize: '15px',
+      color: 'darkgray',
+      fontSize: '12px',
       fontStyle: 'italic'
     }
     var imgTextStyle = {
@@ -77,7 +87,7 @@ class Gallery extends Component {
       /*bottom: 10px;*/
       /*left:  10px;*/
       color: 'dark gray',
-      fontSize: '20px'
+      fontSize: '15px'
     }
     var textColStyle = {
       float: 'left'
@@ -92,19 +102,19 @@ class Gallery extends Component {
     */
 
       return(
-  <div>
+  <div style={pageWrapperStyle}>
     <div className="galleryContainer">
       <Image src={this.state.url} alt={this.state.alt}>
             <div className='row' style={rowStyle}>
               <div className="text-col" style={textColStyle}>
                 <h1 style={imgTextStyle} id="image-text">Photograph No.{this.state.alt}</h1>
                 <br/>
-                <p style={imgCaptionStyle} id="image-caption">Image Caption</p>
+                <p style={imgCaptionStyle} id="image-caption">Caption for the video</p>
               </div>
-              <div style={columnStyle}>
-              {this.props.imageUrls.map((imageUrl, index) => this.renderThumbNail(imageUrl, index),this)}
-              </div>
-          </div>
+                <div style={columnStyle}>
+                  {this.props.imageUrls.map((imageUrl, index) => this.renderThumbNail(imageUrl, index),this)}
+                </div>
+             </div>
               <div style={{content: "", display:'table', clear: 'both'}}></div>
       </Image>
     </div>
@@ -120,3 +130,12 @@ Gallery.propTypes = {
 }
 */
 export default Gallery
+
+/* REPLACED BY <ThumbNail /> Component
+<div style={columnStyle}>
+{this.props.imageUrls.map((imageUrl, index) => this.renderThumbNail(imageUrl, index),this)}
+</div>
+
+
+<ThumbNail imageUrls={imageUrl} selectImage={this.selectImage}/>
+*/
